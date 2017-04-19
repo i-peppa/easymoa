@@ -219,9 +219,6 @@ PHP_EASYMOA_API char *easymoa_sock_read(EasymoaSock *easymoa_sock, int *buf_len 
             err_len = strlen(inbuf+1) - 2;
             easymoa_sock_set_err(easymoa_sock, inbuf+1, err_len);
 
-            /* Filter our ERROR through the few that should actually throw */
-            easymoa_error_throw(inbuf + 1, err_len TSRMLS_CC);
-
             /* Handle stale data error */
             if(memcmp(inbuf + 1, "-ERR SYNC ", 10) == 0) {
                 zend_throw_exception(easymoa_exception_ce, 

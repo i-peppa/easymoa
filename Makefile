@@ -1,16 +1,16 @@
-srcdir = /home/noer/php-7.1.3/ext/easymoa
-builddir = /home/noer/php-7.1.3/ext/easymoa
-top_srcdir = /home/noer/php-7.1.3/ext/easymoa
-top_builddir = /home/noer/php-7.1.3/ext/easymoa
-EGREP = /bin/grep -E
-SED = /bin/sed
-CONFIGURE_COMMAND = './configure' '--with-php-config=php-config' '--enable-debug'
-CONFIGURE_OPTIONS = '--with-php-config=php-config' '--enable-debug'
-SHLIB_SUFFIX_NAME = so
+srcdir = /data/github/easymoa
+builddir = /data/github/easymoa
+top_srcdir = /data/github/easymoa
+top_builddir = /data/github/easymoa
+EGREP = /usr/bin/grep -E
+SED = /usr/bin/sed
+CONFIGURE_COMMAND = './configure' '--with-php-config=/usr/local/php7/bin/php-config' '--enable-debug'
+CONFIGURE_OPTIONS = '--with-php-config=/usr/local/php7/bin/php-config' '--enable-debug'
+SHLIB_SUFFIX_NAME = dylib
 SHLIB_DL_SUFFIX_NAME = so
 ZEND_EXT_TYPE = zend_extension
 RE2C = exit 0;
-AWK = nawk
+AWK = awk
 shared_objects_easymoa = easymoa.lo common.lo
 PHP_PECL_EXTENSION = easymoa
 PHP_MODULES = $(phplibdir)/easymoa.la
@@ -21,7 +21,7 @@ prefix = /usr/local/php7
 exec_prefix = $(prefix)
 libdir = ${exec_prefix}/lib
 prefix = /usr/local/php7
-phplibdir = /home/noer/php-7.1.3/ext/easymoa/modules
+phplibdir = /data/github/easymoa/modules
 phpincludedir = /usr/local/php7/include/php
 CC = cc
 CFLAGS = -g -O0
@@ -40,7 +40,7 @@ LFLAGS =
 LDFLAGS =
 SHARED_LIBTOOL =
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-SHELL = /bin/bash
+SHELL = /bin/sh
 INSTALL_HEADERS =
 mkinstalldirs = $(top_srcdir)/build/shtool mkdir -p
 INSTALL = $(top_srcdir)/build/shtool install -c
@@ -189,10 +189,10 @@ prof-use:
 
 .PHONY: all clean install distclean test prof-gen prof-clean prof-use
 .NOEXPORT:
-easymoa.lo: /home/noer/php-7.1.3/ext/easymoa/easymoa.c
-	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/home/noer/php-7.1.3/ext/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/noer/php-7.1.3/ext/easymoa/easymoa.c -o easymoa.lo 
-common.lo: /home/noer/php-7.1.3/ext/easymoa/common.c
-	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/home/noer/php-7.1.3/ext/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/noer/php-7.1.3/ext/easymoa/common.c -o common.lo 
+easymoa.lo: /data/github/easymoa/easymoa.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/data/github/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /data/github/easymoa/easymoa.c -o easymoa.lo 
+common.lo: /data/github/easymoa/common.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/data/github/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /data/github/easymoa/common.c -o common.lo 
 $(phplibdir)/easymoa.la: ./easymoa.la
 	$(LIBTOOL) --mode=install cp ./easymoa.la $(phplibdir)
 

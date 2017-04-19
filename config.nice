@@ -3,6 +3,6 @@
 # Created by configure
 
 './configure' \
-'--with-php-config=php-config' \
+'--with-php-config=/usr/local/php7/bin/php-config' \
 '--enable-debug' \
 "$@"

@@ -1,7 +1,7 @@
-easymoa.lo: /home/noer/php-7.1.3/ext/easymoa/easymoa.c
-	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/home/noer/php-7.1.3/ext/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/noer/php-7.1.3/ext/easymoa/easymoa.c -o easymoa.lo 
-common.lo: /home/noer/php-7.1.3/ext/easymoa/common.c
-	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/home/noer/php-7.1.3/ext/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/noer/php-7.1.3/ext/easymoa/common.c -o common.lo 
+easymoa.lo: /data/github/easymoa/easymoa.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/data/github/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /data/github/easymoa/easymoa.c -o easymoa.lo 
+common.lo: /data/github/easymoa/common.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/data/github/easymoa $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /data/github/easymoa/common.c -o common.lo 
 $(phplibdir)/easymoa.la: ./easymoa.la
 	$(LIBTOOL) --mode=install cp ./easymoa.la $(phplibdir)
 
