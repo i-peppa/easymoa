@@ -217,7 +217,7 @@ PHP_EASYMOA_API char *easymoa_sock_read(EasymoaSock *easymoa_sock, int *buf_len 
     switch(inbuf[0]) {
         case '-':
             err_len = strlen(inbuf+1) - 2;
-            easymoa_sock_set_err(easymoa_sock, inbuf+1, err_len);
+            //easymoa_sock_set_err(easymoa_sock, inbuf+1, err_len);
 
             /* Handle stale data error */
             if(memcmp(inbuf + 1, "-ERR SYNC ", 10) == 0) {
