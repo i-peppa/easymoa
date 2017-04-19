@@ -208,7 +208,7 @@ PHP_EASYMOA_API char *easymoa_sock_read(EasymoaSock *easymoa_sock, int *buf_len 
     // }
 
     if(php_stream_gets(easymoa_sock->stream, inbuf, 1024) == NULL) {
-        EASYMOA_STREAM_CLOSE_MARK_FAILED(easymoa_sock);
+        //EASYMOA_STREAM_CLOSE_MARK_FAILED(easymoa_sock);
         zend_throw_exception(easymoa_exception_ce, "read error on connection", 
                              0 TSRMLS_CC);
         return NULL;
